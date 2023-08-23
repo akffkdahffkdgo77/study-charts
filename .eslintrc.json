@@ -14,14 +14,18 @@
     },
     "plugins": ["react", "prettier", "@typescript-eslint"],
     "rules": {
+        "no-alert": "off",
         "no-plusplus": "off",
+        "no-nested-ternary": "off",
         "no-await-in-loop": "off",
         "import/extensions": "off",
         "no-return-assign": "off",
         "no-useless-concat": "off",
+        "import/prefer-default-export": "off",
         "react/jsx-props-no-spreading": "off",
         "react/require-default-props": "off",
         "import/no-extraneous-dependencies": "off",
+        "@typescript-eslint/no-explicit-any": "off",
         "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "import/order": [
             "error",
