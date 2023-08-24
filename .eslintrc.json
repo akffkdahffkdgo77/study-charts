@@ -33,7 +33,12 @@
                 "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index", "object", "type"],
                 "pathGroups": [
                     {
-                        "pattern": "{react*,react*/**}",
+                        "pattern": "{react*/**}",
+                        "group": "builtin",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "{react-chartjs-2,chart.js}",
                         "group": "builtin",
                         "position": "before"
                     },

@@ -1,16 +1,9 @@
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartData } from 'chart.js';
+import type { Props } from './types';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
-type DataType = ChartData<'bar', number[], string>;
-
-interface Props {
-    options: any;
-    isLoading: boolean;
-    data?: DataType;
-}
 
 export default function BarChart({ options, isLoading, data }: Props) {
     return (

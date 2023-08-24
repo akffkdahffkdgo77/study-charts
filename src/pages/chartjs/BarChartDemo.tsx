@@ -2,28 +2,20 @@ import { useState } from 'react';
 
 import useFetch from 'hooks/useFetch';
 
-import BarChart from 'chartjs/bar/BarChart';
-import { barOptions, stackedBarOptions } from 'chartjs/config/bar';
-import getBarList, { BarChartData } from 'chartjs/utils/bar';
+import BarChart, { BarChartData, barOptions, getDataList, stackedBarOptions } from 'chartjs/bar';
 
 export default function BarChartDemo() {
-    const { data, isLoading } = useFetch<BarChartData>(() =>
-        getBarList({
-            index: 3,
-            delay: 1000,
-            isColorChange: false
-        })
-    );
+    const { data, isLoading } = useFetch<BarChartData>(() => getDataList({}));
 
     const [type, setType] = useState<'stacked' | 'default'>('default');
     const [index, setIndex] = useState(3);
-    const [addInfo, setAddInfo] = useState<BarChartData>();
+    const [additionalInfo, setAdditionalInfo] = useState<BarChartData>();
 
     const handleAdditionalInfo = () => {
         if (index < 8) {
             setIndex((prev) => prev + 1);
-            getBarList({ index: index + 1, delay: 100 }).then((res) => {
-                setAddInfo(res);
+            getDataList({ index: index + 1, delay: 100 }).then((res) => {
+                setAdditionalInfo(res);
             });
         } else {
             alert('데이터가 없습니다...!');
@@ -31,8 +23,8 @@ export default function BarChartDemo() {
     };
 
     const handleColorChange = () => {
-        getBarList({ index, delay: 100, isColorChange: true }).then((res) => {
-            setAddInfo(res);
+        getDataList({ index, delay: 100, isColorChange: true }).then((res) => {
+            setAdditionalInfo(res);
         });
     };
 
@@ -57,7 +49,7 @@ export default function BarChartDemo() {
                 </div>
             </header>
             <main>
-                <BarChart key={type === 'default' ? 'default-bar' : 'stacked-bar'} options={type === 'default' ? barOptions : stackedBarOptions} data={addInfo ?? data} isLoading={isLoading} />
+                <BarChart key={type === 'default' ? 'default-bar' : 'stacked-bar'} options={type === 'default' ? barOptions : stackedBarOptions} data={additionalInfo ?? data} isLoading={isLoading} />
             </main>
         </>
     );
