@@ -14,7 +14,10 @@ export default function BarChartDemo() {
     const handleAdditionalInfo = () => {
         if (index < 8) {
             setIndex((prev) => prev + 1);
-            getDataList({ index: index + 1, delay: 100 }).then((res) => {
+            getDataList({
+                index: index + 1,
+                delay: 100
+            }).then((res) => {
                 setAdditionalInfo(res);
             });
         } else {
@@ -23,7 +26,11 @@ export default function BarChartDemo() {
     };
 
     const handleColorChange = () => {
-        getDataList({ index, delay: 100, isColorChange: true }).then((res) => {
+        getDataList({
+            index,
+            delay: 100,
+            isColorChange: true
+        }).then((res) => {
             setAdditionalInfo(res);
         });
     };
