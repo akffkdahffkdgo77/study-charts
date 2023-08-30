@@ -3,6 +3,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import BaseLayout from 'layout/BaseLayout';
 import BarChartDemo from 'pages/chartjs/BarChartDemo';
 import BubbleChartDemo from 'pages/chartjs/BubbleChartDemo';
+import DonutChartDemo from 'pages/chartjs/DonutChartDemo';
+import LineChartDemo from 'pages/chartjs/LineChartDemo';
 
 function App() {
     return (
@@ -22,6 +24,14 @@ function App() {
                                 {
                                     path: 'bubble',
                                     element: <BubbleChartDemo />
+                                },
+                                {
+                                    path: 'line',
+                                    element: <LineChartDemo />
+                                },
+                                {
+                                    path: 'donut',
+                                    element: <DonutChartDemo />
                                 }
                             ]
                         }
