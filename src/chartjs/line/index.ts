@@ -1,6 +1,6 @@
 import LineChart from './LineChart';
 
-export * from './utils';
+export * from './data';
 export * from './config';
 export * from './types';
 
