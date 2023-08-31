@@ -5,6 +5,7 @@ import BarChartDemo from 'pages/chartjs/BarChartDemo';
 import BubbleChartDemo from 'pages/chartjs/BubbleChartDemo';
 import DonutChartDemo from 'pages/chartjs/DonutChartDemo';
 import LineChartDemo from 'pages/chartjs/LineChartDemo';
+import PieChartDemo from 'pages/chartjs/PieChartDemo';
 
 function App() {
     return (
@@ -32,6 +33,10 @@ function App() {
                                 {
                                     path: 'donut',
                                     element: <DonutChartDemo />
+                                },
+                                {
+                                    path: 'pie',
+                                    element: <PieChartDemo />
                                 }
                             ]
                         }
