@@ -1,7 +1,5 @@
 import { BORDER_COLORS, COLORS4, COLOR_LIST, getRandom } from 'chartjs/common';
 
-import type { DonutChartData } from './types';
-
 let prevColorIndex = 0;
 const createRandomColors = () => {
     let newColorIndex = getRandom(3, 0);
@@ -12,7 +10,7 @@ const createRandomColors = () => {
     return COLOR_LIST[newColorIndex];
 };
 
-export const getDataList = async ({ index = 1, delay = 1000, isColorChange = false }): Promise<DonutChartData> => {
+export const getDataList = async <T>({ index = 1, delay = 1000, isColorChange = false }): Promise<T> => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve({
@@ -26,7 +24,7 @@ export const getDataList = async ({ index = 1, delay = 1000, isColorChange = fal
                         borderWidth: 1
                     }
                 ]
-            });
+            } as T);
         }, delay);
     });
 };
