@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import useFetch from 'hooks/useFetch';
 
-import { DonutChart, donutOptions, getDataList } from 'chartjs/pie';
+import { DonutChart, pieOptions, getDataList } from 'chartjs/pie';
 import type { DonutChartData } from 'chartjs/pie/types';
 
 export default function DonutChartDemo() {
@@ -14,7 +14,7 @@ export default function DonutChartDemo() {
     const handleAdditionalInfo = () => {
         if (index < 6) {
             setIndex((prev) => prev + 1);
-            getDataList({
+            getDataList<DonutChartData>({
                 index: index + 1,
                 delay: 100
             }).then((res) => {
@@ -26,7 +26,7 @@ export default function DonutChartDemo() {
     };
 
     const handleColorChange = () => {
-        getDataList({
+        getDataList<DonutChartData>({
             index,
             delay: 100,
             isColorChange: true
@@ -36,7 +36,7 @@ export default function DonutChartDemo() {
     };
 
     const handleShuffle = () => {
-        getDataList({
+        getDataList<DonutChartData>({
             index,
             delay: 100,
             isColorChange: false
@@ -62,7 +62,7 @@ export default function DonutChartDemo() {
                 </div>
             </header>
             <main>
-                <DonutChart options={donutOptions} data={addInfo ?? data} isLoading={isLoading} />
+                <DonutChart options={pieOptions} data={addInfo ?? data} isLoading={isLoading} />
             </main>
         </>
     );
