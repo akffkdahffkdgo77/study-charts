@@ -1,4 +1,4 @@
-import { BORDER_COLORS, COLORS4, COLOR_LIST, getRandom } from 'chartjs/common';
+import { BORDER_COLORS, COLORS4, COLOR_LIST, getRandom } from '../common';
 
 let prevColorIndex = 0;
 const createRandomColors = () => {

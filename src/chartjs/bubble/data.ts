@@ -1,4 +1,4 @@
-import { COLORS, COLOR_LIST, getRandom } from 'chartjs/common';
+import { COLORS, COLOR_LIST, getRandom } from '../common';
 
 import type { BubbleChartData } from './types';
 

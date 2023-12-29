@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
-import Button from 'components/Button';
-import useFetch from 'hooks/useFetch';
-import Header from 'layout/Header';
+import { PieChart, pieOptions, getDataList } from '@chartjs/pie';
+import type { PieChartData } from '@chartjs/pie/types';
 
-import { PieChart, pieOptions, getDataList } from 'chartjs/pie';
-import type { PieChartData } from 'chartjs/pie/types';
+import Button from '@components/Button';
+import Header from '@layout/Header';
+
+import useFetch from '@hooks/useFetch';
 
 export default function PieChartDemo() {
     const { data, isLoading } = useFetch<PieChartData>(() => getDataList({}));

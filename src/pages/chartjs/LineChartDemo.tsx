@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-import Button from 'components/Button';
-import useFetch from 'hooks/useFetch';
-import Header from 'layout/Header';
+import LineChart, { LineChartData, getDataList, lineOptions } from '@chartjs/line';
 
-import LineChart, { LineChartData, getDataList, lineOptions } from 'chartjs/line';
+import Button from '@components/Button';
+import Header from '@layout/Header';
+
+import useFetch from '@hooks/useFetch';
 
 export default function LineChartDemo() {
     const { data, isLoading } = useFetch<LineChartData>(() => getDataList({}));
