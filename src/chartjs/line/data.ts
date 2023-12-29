@@ -1,4 +1,4 @@
-import { COLORS, COLOR_LIST, LABELS, getRandom } from 'chartjs/common';
+import { COLORS, COLOR_LIST, LABELS, getRandom } from '../common';
 
 import type { LineChartData } from './types';
 

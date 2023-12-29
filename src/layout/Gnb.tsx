@@ -30,14 +30,14 @@ export default function Gnb() {
 
     return (
         <div ref={listRef} className="relative">
-            <button type="button" onClick={() => setIsOpen((prev) => !prev)} className="text-gradient w-40 rounded-md border border-orange-500 p-1 font-bold">
+            <button type="button" onClick={() => setIsOpen((prev) => !prev)} className="w-40 rounded-md border border-orange-500 p-1 font-bold text-gradient">
                 {OPTIONS.find((val) => val.to === pathname)?.name}
             </button>
             {isOpen && (
                 <nav className="absolute top-11 z-10 w-40 rounded border bg-white py-1 shadow-md">
                     <ul className="flex max-h-40 flex-col divide-y overflow-y-auto">
                         {OPTIONS.slice(1).map((val) => (
-                            <li key={val.name} className="hover:text-gradient h-10 flex-none leading-10 hover:opacity-50">
+                            <li key={val.name} className="h-10 flex-none leading-10 hover:opacity-50 hover:text-gradient">
                                 <Link to={val.to} className="block w-full text-center font-medium">
                                     {val.name}
                                 </Link>

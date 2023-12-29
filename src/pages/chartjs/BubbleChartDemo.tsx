@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-import Button from 'components/Button';
-import useFetch from 'hooks/useFetch';
-import Header from 'layout/Header';
+import BubbleChart, { BubbleChartData, bubbleOptions, getDataList } from '@chartjs/bubble';
 
-import BubbleChart, { BubbleChartData, bubbleOptions, getDataList } from 'chartjs/bubble';
+import Button from '@components/Button';
+import Header from '@layout/Header';
+
+import useFetch from '@hooks/useFetch';
 
 export default function BubbleChartDemo() {
     const { data, isLoading } = useFetch<BubbleChartData>(() => getDataList({}));

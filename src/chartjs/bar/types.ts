@@ -1,6 +1,6 @@
 import { ChartData } from 'chart.js';
 
-import type { BaseProps } from 'chartjs/common/types';
+import type { BaseProps } from '../common/types';
 
 export type BarChartData = ChartData<'bar', number[], string>;
 

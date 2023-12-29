@@ -38,22 +38,22 @@
                         "position": "before"
                     },
                     {
-                        "pattern": "{react-chartjs-2,chart.js}",
+                        "pattern": "{react-chartjs-2,chart.js**}",
                         "group": "builtin",
                         "position": "before"
                     },
                     {
-                        "pattern": "d3js/**",
+                        "pattern": "@chartjs/**",
                         "group": "internal",
                         "position": "after"
                     },
                     {
-                        "pattern": "chartjs/**",
+                        "pattern": "{@components/**,@layout/**}",
                         "group": "internal",
                         "position": "after"
                     },
                     {
-                        "pattern": "{styles/**,*.+(css|scss)}",
+                        "pattern": "{@hooks/**,@styles/**,*.+(css|scss)}",
                         "patternOptions": {
                             "dot": true,
                             "nocomment": true,

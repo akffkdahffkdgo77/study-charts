@@ -1,5 +1,4 @@
-import { COLORS, COLOR_LIST, DATA_LABELS, LABELS } from 'chartjs/common/constants';
-import { getRandom } from 'chartjs/common/utils';
+import { COLORS, COLOR_LIST, DATA_LABELS, LABELS, getRandom } from '../common';
 
 import type { BarChartData } from './types';
 

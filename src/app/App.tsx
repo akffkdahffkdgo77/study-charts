@@ -1,9 +1,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import BaseLayout from 'layout/BaseLayout';
-import { BarChartDemo, BubbleChartDemo, DonutChartDemo, LineChartDemo, PieChartDemo } from 'pages/ChartJS';
+import { BarChartDemo, BubbleChartDemo, DonutChartDemo, LineChartDemo, PieChartDemo } from '@pages/ChartJS';
 
-function App() {
+import BaseLayout from '@layout/BaseLayout';
+
+export default function App() {
     return (
         <RouterProvider
             router={createBrowserRouter([
@@ -46,5 +47,3 @@ function App() {
         />
     );
 }
-
-export default App;
