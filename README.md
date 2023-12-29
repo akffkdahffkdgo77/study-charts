@@ -1,5 +1,5 @@
-<img src="https://capsule-render.vercel.app/api?section=header&type=waving&height=300&text=Study%20Charts&color=timeGradient&fontSize=90" alt="" />
-
+<img src="https://capsule-render.vercel.app/api?section=header&type=waving&height=300&text=Study%20Charts&color=gradient&fontSize=90&animation=fadeIn" alt="" />
+ 
 ## 프로젝트 실행
 
 **node** v18.17.1   
