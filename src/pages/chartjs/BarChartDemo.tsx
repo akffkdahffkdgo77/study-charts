@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
+import Button from 'components/Button';
 import useFetch from 'hooks/useFetch';
+import Header from 'layout/Header';
 
 import BarChart, { BarChartData, barOptions, getDataList, stackedBarOptions } from 'chartjs/bar';
 
@@ -14,10 +16,7 @@ export default function BarChartDemo() {
     const handleAdditionalInfo = () => {
         if (index < 8) {
             setIndex((prev) => prev + 1);
-            getDataList({
-                index: index + 1,
-                delay: 100
-            }).then((res) => {
+            getDataList({ index: index + 1, delay: 100 }).then((res) => {
                 setAdditionalInfo(res);
             });
         } else {
@@ -26,11 +25,7 @@ export default function BarChartDemo() {
     };
 
     const handleColorChange = () => {
-        getDataList({
-            index,
-            delay: 100,
-            isColorChange: true
-        }).then((res) => {
+        getDataList({ index, delay: 100, isColorChange: true }).then((res) => {
             setAdditionalInfo(res);
         });
     };
@@ -41,21 +36,12 @@ export default function BarChartDemo() {
 
     return (
         <>
-            <header className="flex w-full items-center justify-between p-5">
-                <h1 className="text-4xl font-bold">Study Charts</h1>
-                <div className="flex items-center gap-2.5">
-                    <button type="button" onClick={handleAdditionalInfo} className="rounded-md border border-black p-1">
-                        Add Data
-                    </button>
-                    <button type="button" onClick={handleColorChange} className="rounded-md border border-black p-1">
-                        Change Colors
-                    </button>
-                    <button type="button" onClick={handleTypeChange} className="rounded-md border border-black p-1">
-                        Change Type : {type === 'stacked' ? 'Stacked' : 'Bar'}
-                    </button>
-                </div>
-            </header>
-            <main>
+            <Header>
+                <Button text="Add Data" onClick={handleAdditionalInfo} />
+                <Button text="Change Colors" onClick={handleColorChange} />
+                <Button text={`Change Type : ${type === 'stacked' ? 'Stacked' : 'Bar'}`} onClick={handleTypeChange} />
+            </Header>
+            <main className="flex h-screen items-center justify-center pt-20">
                 <BarChart key={type === 'default' ? 'default-bar' : 'stacked-bar'} options={type === 'default' ? barOptions : stackedBarOptions} data={additionalInfo ?? data} isLoading={isLoading} />
             </main>
         </>

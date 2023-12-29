@@ -1,11 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import BaseLayout from 'layout/BaseLayout';
-import BarChartDemo from 'pages/chartjs/BarChartDemo';
-import BubbleChartDemo from 'pages/chartjs/BubbleChartDemo';
-import DonutChartDemo from 'pages/chartjs/DonutChartDemo';
-import LineChartDemo from 'pages/chartjs/LineChartDemo';
-import PieChartDemo from 'pages/chartjs/PieChartDemo';
+import { BarChartDemo, BubbleChartDemo, DonutChartDemo, LineChartDemo, PieChartDemo } from 'pages/ChartJS';
 
 function App() {
     return (
@@ -15,6 +11,10 @@ function App() {
                     path: '',
                     element: <BaseLayout />,
                     children: [
+                        {
+                            path: '',
+                            element: <BarChartDemo />
+                        },
                         {
                             path: 'chartjs',
                             children: [

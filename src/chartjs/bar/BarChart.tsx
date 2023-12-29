@@ -7,7 +7,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export default function BarChart({ options, isLoading, data }: Props) {
     return (
-        <div className="h-[600px] w-full bg-white p-5">
+        <div className="h-[600px] w-full rounded border bg-white p-5 shadow-md">
             {isLoading ? (
                 <p className="flex h-full w-full items-center justify-center text-3xl font-bold">Loading...!</p>
             ) : data ? (
